@@ -23,6 +23,7 @@ A modern take on the classic Flappy Bird game with power-ups, particle effects, 
     - [Development Tips](#development-tips)
   - [🎮 Game Controls](#-game-controls)
   - [🌟 Features](#-features)
+  - [📸 Screenshots](#-screenshots)
   - [👥 Contributing](#-contributing)
   - [📄 License](#-license)
 
@@ -116,7 +117,8 @@ flappy-ball/
 ├── include/          # Header files (for future use)
 ├── assets/          # Game assets
 │   ├── sfx/         # Sound effects (for future use)
-│   └── textures/    # Game textures (for future use)
+│   ├── textures/    # Game textures (for future use)
+│   └── screenshots/ # Game screenshots for documentation
 ├── scripts/         # Build and utility scripts
 │   ├── build_linux.sh        # Debug build script for Linux
 │   ├── build_windows.bat     # Debug build script for Windows
@@ -197,6 +199,24 @@ The project supports two build modes:
 - Power-up system
 - Score tracking and high scores
 - Cross-platform compatibility (Windows, Linux)
+
+## 📸 Screenshots
+
+![Main Menu](assets/screenshots/main-menu.png)
+
+*The main menu screen with play and options buttons*
+
+![Gameplay](assets/screenshots/gameplay.png)
+
+*In-game screenshot showing the ball, obstacles, and particle effects*
+
+![Pause Menu](assets/screenshots/pause-menu.png)
+
+*Pause menu with options to resume or restart the game*
+
+![Game Over](assets/screenshots/game-over.png)
+
+*Game over screen displaying the final score*
 
 ## 👥 Contributing
 
