@@ -43,6 +43,7 @@ cd flappy-ball
 ### Windows Setup
 
 1. Install required tools:
+
    - Visual Studio Build Tools 2022 with "Desktop development with C++"
    - CMake 3.10 or higher
    - Git
@@ -57,9 +58,11 @@ cd flappy-ball
 ## Build Modes
 
 1. Debug Build (development)
+
    - Includes debug symbols
    - No optimizations
    - More verbose logging
+
    ```bash
    ./scripts/build_linux.sh  # Linux
    scripts\build_windows.bat # Windows
@@ -77,6 +80,7 @@ cd flappy-ball
 ## Adding New Features
 
 1. Game Components
+
    - Add header files in `include/`
    - Implement in `src/`
    - Update CMakeLists.txt if adding new source files

@@ -1344,7 +1344,7 @@ void drawPowerUpTimer(float x, float y, float progress, int type)
     glEnd();
 
     // Draw remaining time in seconds, capped at 99s
-    char timeStr[16];  // Increased buffer size to safely handle any integer
+    char timeStr[16]; // Increased buffer size to safely handle any integer
     int secondsLeft = std::min(99, (powerUpTimer / 60) + 1);
     snprintf(timeStr, sizeof(timeStr), "%ds", secondsLeft);
     glColor3f(1.0f, 1.0f, 1.0f);

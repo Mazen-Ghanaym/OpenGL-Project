@@ -38,6 +38,7 @@ cd build && ./flappy-ball
 ### For Windows Users
 
 1. Install these prerequisites:
+
    - [Visual Studio Build Tools 2022](https://visualstudio.microsoft.com/downloads/) (select "Desktop development with C++")
    - [CMake](https://cmake.org/download/) (add to PATH)
    - [Git](https://git-scm.com/download/win)
@@ -81,6 +82,7 @@ make
 ### Windows Build Guide
 
 1. Install Dependencies:
+
    - Visual Studio Build Tools 2022 with "Desktop development with C++"
    - CMake 3.10 or higher
    - Git
@@ -128,19 +130,21 @@ flappy-ball/
 The project supports two build modes:
 
 1. Debug (default)
+
    ```bash
    # Linux
    ./scripts/build_linux.sh
-   
+
    # Windows
    scripts\build_windows.bat
    ```
 
 2. Release (optimized)
+
    ```bash
    # Linux
    ./scripts/make_release.sh
-   
+
    # Windows
    scripts\make_release_windows.bat
    ```
@@ -148,6 +152,7 @@ The project supports two build modes:
 ### Development Tips
 
 1. **Code Organization**
+
    - Main game logic is in `src/sample.cpp`
    - Place header files in `include/`
    - Add sound effects to `assets/sfx/`
@@ -157,6 +162,7 @@ The project supports two build modes:
    - Supports both MinGW and MSVC on Windows
    - Debug builds include symbols for debugging
    - Release builds are optimized for performance
+
 - OpenAL
 - CMake 3.10+
 
