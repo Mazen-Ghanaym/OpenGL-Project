@@ -185,7 +185,7 @@ The project supports two build modes:
 - Esc: Pause game
 - P: Toggle pause
 - R: Restart game
-- M: Toggle music
+- M: Return to main menu
 - S: Toggle sound effects
 
 ## 🌟 Features
