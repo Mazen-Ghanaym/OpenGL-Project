@@ -8,14 +8,23 @@ A modern take on the classic Flappy Bird game with power-ups, particle effects, 
 
 ## 📜 Table of Contents
 
-- [Quick Start](#-quick-start)
-- [Building from Source](#-building-from-source)
-- [Project Structure](#-project-structure)
-- [Dependencies](#-dependencies)
-- [Game Controls](#-game-controls)
-- [Features](#-features)
-- [Development](#-development)
-- [Contributing](#-contributing)
+- [🎮 Flappy Ball OpenGL](#-flappy-ball-opengl)
+  - [📜 Table of Contents](#-table-of-contents)
+  - [🚀 Quick Start](#-quick-start)
+    - [For Linux Users](#for-linux-users)
+    - [For Windows Users](#for-windows-users)
+  - [🔨 Building from Source](#-building-from-source)
+    - [Linux Build Guide](#linux-build-guide)
+    - [Windows Build Guide](#windows-build-guide)
+  - [📂 Project Structure](#-project-structure)
+  - [📦 Dependencies](#-dependencies)
+  - [🔧 Development](#-development)
+    - [Build Modes](#build-modes)
+    - [Development Tips](#development-tips)
+  - [🎮 Game Controls](#-game-controls)
+  - [🌟 Features](#-features)
+  - [👥 Contributing](#-contributing)
+  - [📄 License](#-license)
 
 ## 🚀 Quick Start
 
@@ -29,7 +38,7 @@ sudo apt-get update
 sudo apt-get install build-essential cmake freeglut3-dev libopenal-dev
 
 # Get the code and build
-git clone https://github.com/yourusername/flappy-ball.git
+git clone https://github.com/Mazen-Ghanaym/OpenGL-Project.git flappy-ball
 cd flappy-ball
 ./scripts/build_linux.sh
 cd build && ./flappy-ball
@@ -46,7 +55,7 @@ cd build && ./flappy-ball
 2. Build and run:
 
    ```batch
-   git clone https://github.com/yourusername/flappy-ball.git
+   git clone https://github.com/Mazen-Ghanaym/OpenGL-Project.git flappy-ball
    cd flappy-ball
    scripts\build_windows.bat
    cd build
@@ -65,7 +74,7 @@ sudo apt-get update
 sudo apt-get install build-essential cmake freeglut3-dev libopenal-dev
 
 # 2. Clone the repository
-git clone https://github.com/yourusername/flappy-ball.git
+git clone https://github.com/Mazen-Ghanaym/OpenGL-Project.git flappy-ball
 cd flappy-ball
 
 # 3. Create build directory
@@ -90,7 +99,7 @@ make
 2. Build Steps:
 
    ```batch
-   git clone https://github.com/yourusername/flappy-ball.git
+   git clone https://github.com/Mazen-Ghanaym/OpenGL-Project.git flappy-ball
    cd flappy-ball
    mkdir build
    cd build
@@ -104,16 +113,20 @@ make
 flappy-ball/
 ├── src/              # Source code files
 │   └── sample.cpp    # Main game implementation
-├── include/          # Header files
-├── assets/
-│   └── sfx/         # Sound effects (coming soon)
+├── include/          # Header files (for future use)
+├── assets/          # Game assets
+│   ├── sfx/         # Sound effects (for future use)
+│   └── textures/    # Game textures (for future use)
 ├── scripts/         # Build and utility scripts
-│   ├── build_linux.sh
-│   ├── build_windows.bat
-│   ├── make_release.sh
-│   └── make_release_windows.bat
-├── CMakeLists.txt   # CMake build configuration
-└── README.md
+│   ├── build_linux.sh        # Debug build script for Linux
+│   ├── build_windows.bat     # Debug build script for Windows
+│   ├── make_release.sh       # Release build script for Linux
+│   ├── make_release_windows.bat  # Release build script for Windows
+│   └── setup_linux.sh       # Linux environment setup
+├── CMakeLists.txt   # Build system configuration
+├── DEVELOPMENT.md   # Development guide
+├── LICENSE          # MIT License
+└── README.md        # Project documentation
 ```
 
 ## 📦 Dependencies
