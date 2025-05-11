@@ -651,18 +651,21 @@ void display()
             drawText(10, WINDOW_HEIGHT - 30, "Score: " + std::to_string(score));
         }
         drawText(10, WINDOW_HEIGHT - 50, "Lives: " + std::to_string(lives));
-        
+
         // Draw power-up timers
         float timerY = WINDOW_HEIGHT - 80;
         float timerSpacing = 60.0f;
-        
-        if (hasShield) {
+
+        if (hasShield)
+        {
             drawPowerUpTimer(40, timerY, (float)powerUpTimer / POWER_UP_DURATION, SHIELD);
         }
-        if (hasSlowMotion) {
+        if (hasSlowMotion)
+        {
             drawPowerUpTimer(40 + timerSpacing, timerY, (float)powerUpTimer / POWER_UP_DURATION, SLOW_MOTION);
         }
-        if (hasDoublePoints) {
+        if (hasDoublePoints)
+        {
             drawPowerUpTimer(40 + timerSpacing * 2, timerY, (float)powerUpTimer / POWER_UP_DURATION, DOUBLE_POINTS);
         }
 
@@ -1249,89 +1252,97 @@ void drawPowerUpTimer(float x, float y, float progress, int type)
 {
     const float outerRadius = 25.0f;
     const float innerRadius = 20.0f;
-    
+
     // Draw outer circle (background)
     glBegin(GL_TRIANGLE_STRIP);
     glColor4f(0.2f, 0.2f, 0.2f, 0.5f);
-    for (int i = 0; i <= 360; i++) {
+    for (int i = 0; i <= 360; i++)
+    {
         float angle = i * PI / 180.0f;
         float cos_val = cos(angle);
         float sin_val = sin(angle);
-        
+
         glVertex2f(x + cos_val * innerRadius, y + sin_val * innerRadius);
         glVertex2f(x + cos_val * outerRadius, y + sin_val * outerRadius);
     }
     glEnd();
-    
+
     // Draw progress arc
     glBegin(GL_TRIANGLE_STRIP);
-    switch (type) {
-        case SHIELD:
-            glColor4f(0.0f, 0.0f, 1.0f, 0.8f);
-            break;
-        case SLOW_MOTION:
-            glColor4f(0.0f, 1.0f, 0.0f, 0.8f);
-            break;
-        case DOUBLE_POINTS:
-            glColor4f(1.0f, 1.0f, 0.0f, 0.8f);
-            break;
+    switch (type)
+    {
+    case SHIELD:
+        glColor4f(0.0f, 0.0f, 1.0f, 0.8f);
+        break;
+    case SLOW_MOTION:
+        glColor4f(0.0f, 1.0f, 0.0f, 0.8f);
+        break;
+    case DOUBLE_POINTS:
+        glColor4f(1.0f, 1.0f, 0.0f, 0.8f);
+        break;
     }
-    
+
     int progressDegrees = progress * 360;
-    for (int i = 0; i <= progressDegrees; i++) {
+    for (int i = 0; i <= progressDegrees; i++)
+    {
         float angle = i * PI / 180.0f;
         float cos_val = cos(angle);
         float sin_val = sin(angle);
-        
+
         glVertex2f(x + cos_val * innerRadius, y + sin_val * innerRadius);
         glVertex2f(x + cos_val * outerRadius, y + sin_val * outerRadius);
     }
     glEnd();
-    
+
     // Draw icon in the middle based on power-up type
     glBegin(GL_POLYGON);
-    switch (type) {
-        case SHIELD:
-            // Draw shield icon
-            glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
-            for (int i = 0; i < 360; i++) {
-                if (i * PI / 180.0f > PI * 0.2f) { // Create shield shape
-                    float angle = i * PI / 180.0f;
-                    glVertex2f(x + cos(angle) * (innerRadius * 0.6f),
-                             y + sin(angle) * (innerRadius * 0.6f));
-                }
-            }
-            break;
-            
-        case SLOW_MOTION:
-            // Draw clock icon
-            glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
-            for (int i = 0; i < 12; i++) {
-                float angle = i * PI / 6.0f;
+    switch (type)
+    {
+    case SHIELD:
+        // Draw shield icon
+        glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
+        for (int i = 0; i < 360; i++)
+        {
+            if (i * PI / 180.0f > PI * 0.2f)
+            { // Create shield shape
+                float angle = i * PI / 180.0f;
                 glVertex2f(x + cos(angle) * (innerRadius * 0.6f),
-                          y + sin(angle) * (innerRadius * 0.6f));
+                           y + sin(angle) * (innerRadius * 0.6f));
             }
-            // Draw clock hands
-            glVertex2f(x, y);
-            glVertex2f(x + innerRadius * 0.4f, y);
-            glVertex2f(x, y + innerRadius * 0.3f);
-            break;
-            
-        case DOUBLE_POINTS:
-            // Draw star icon
-            glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
-            for (int i = 0; i < 5; i++) {
-                float angle = i * 2 * PI / 5.0f;
-                glVertex2f(x + cos(angle) * (innerRadius * 0.6f),
-                          y + sin(angle) * (innerRadius * 0.6f));
-                angle += PI / 5.0f;
-                glVertex2f(x + cos(angle) * (innerRadius * 0.3f),
-                          y + sin(angle) * (innerRadius * 0.3f));
-            }
-            break;
+        }
+        break;
+
+    case SLOW_MOTION:
+        // Draw clock icon
+        glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
+        for (int i = 0; i < 12; i++)
+        {
+            float angle = i * PI / 6.0f;
+            glVertex2f(x + cos(angle) * (innerRadius * 0.6f),
+                       y + sin(angle) * (innerRadius * 0.6f));
+        }
+        // Draw clock hands
+        glVertex2f(x, y);
+        glVertex2f(x + innerRadius * 0.4f, y);
+        glVertex2f(x, y + innerRadius * 0.3f);
+        break;
+
+    case DOUBLE_POINTS:
+        // Draw star icon
+        glColor4f(1.0f, 1.0f, 1.0f, 0.9f);
+        for (int i = 0; i < 5; i++)
+        {
+            float angle = i * 2 * PI / 5.0f;
+            glVertex2f(x + cos(angle) * (innerRadius * 0.6f),
+                       y + sin(angle) * (innerRadius * 0.6f));
+            angle += PI / 5.0f;
+            glVertex2f(x + cos(angle) * (innerRadius * 0.3f),
+                       y + sin(angle) * (innerRadius * 0.3f));
+        }
+        break;
     }
     glEnd();
-    
+
     // Draw remaining time in seconds, capped at 99s to ensure it fits in our buffer
     char timeStr[8];
     int secondsLeft = std::min(99, (powerUpTimer / 60) + 1);
