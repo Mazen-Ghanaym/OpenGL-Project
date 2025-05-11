@@ -1,1 +1,66 @@
-.vscode
+# Build directories
+build/
+build_*/
+out/
+Debug/
+Release/
+x64/
+Win32/
+release/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+Makefile
+
+# IDE specific files
+.vscode/
+.vs/
+*.swp
+*~
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+flappy-ball
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# vcpkg
+vcpkg/
+vcpkg_installed/
+
+# Dependencies
+assets/sfx/*.wav
+assets/sfx/*.mp3
